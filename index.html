@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
        <title>EWEB Portfolio</title>
        <meta charset="UTF-8">
@@ -7,21 +7,53 @@
        <meta name="description" content="This is my portfolio page in the module EWEB for my studies in Business Information Systems at BFH">
        <meta name="keywords" content="portfolio, EWEB, BFH, Business Information Systems, Digital Business & AI">
        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-       <!--link rel="stylesheet" href="..."-->
+       <link rel="stylesheet" href="/styles.css">
        <!--link rel="icon" href="..."-->
        <!--link rel="canonical" href="..."-->
-       <!--script src="..."></script-->
+       <script src="/scripts.js"></script>
        <!--style></style-->
        <!--base href="..."-->
     </head>
     <body>
         <header>
-
+            <nav>
+                <ul class="navigation-ul">
+                    <li class="navigation-li"><a href="#about-me-article">About me</a></li>
+                    <li class="navigation-li"><a href="#tech-skills-article">Tech Skills</a></li>
+                    <li class="navigation-li"><a href="#other-skills-article">Other Skills</a></li>
+                    <li class="navigation-li"><a href="#api-call-article">API Call</a></li>
+                </ul>
+            </nav>
+            <h1>Portfolio Name</h1>
         </header>
         <main>
-            <img src="/sources/profilepicture.jpeg" alt="profilepicture">
-            <h1>Portfolio Name</h1>
-            <p>I am a Business Information Systems Student at BFH</p>
+            <article id="tech-skills-article">
+                <h2>My Tech Skills</h2>
+                <p>This is a Work in Progress</p>
+                <ul>
+                    <li>Python</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                    <li>Angular</li>
+                </ul>
+            </article>
+            <article id="about-me-article">
+                <h2>About me</h2>
+                <img class="profilepicture" src="/sources/profilepicture.jpeg" alt="profilepicture">
+                <p>I am a Business Information Systems Student at BFH</p>
+            </article>
+            <article id="other-skills-article">
+                <h2>Other Skills</h2>
+            </article>
+            <article id="api-call-article">
+                 <h2>API Call</h2>
+            </article>
+            <article id="playground-article">
+                <h2>Playground</h2>
+                <button class="MyButton">MyButton</button>
+                <script src="scripts.js"></script>
+            </article>
         </main>
         <footer>
             
