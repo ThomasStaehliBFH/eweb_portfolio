@@ -19,6 +19,7 @@ body {
         'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     padding: 0px;
     margin: 0px;
+    overflow-x: hidden;
 }
 
 header {
@@ -41,7 +42,7 @@ article {
     background-color: black;
     padding: 10px;
     border: 1px solid white;
-    height: 500px;
+    height: auto;
 }
 
 section {
@@ -151,4 +152,49 @@ li {
 
 .MyButton:hover {
     font-size: 16px;
+}
+
+.carousel-wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 100px auto;
+    overflow-x: auto;
+    /* IMPORTANT */
+
+    position: relative;
+    cursor: grab;
+    white-space: nowrap;
+    /* keeps items inline */
+    /* scroll-behavior: smooth;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 10+ */
+}
+
+.carousel-wrapper::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Edge */
+}
+
+
+.icon-track {
+    display: inline-flex;
+    /* horizontal layout for inline content */
+    gap: 30px;
+    padding: 20px 0;
+
+}
+
+
+.icon-track img {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+
+.carousel-wrapper.dragging {
+    cursor: grabbing;
 }
