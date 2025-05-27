@@ -30,6 +30,7 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
 }
 
@@ -97,6 +98,9 @@ h6 {
 
 p {
     color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 ul {
@@ -277,33 +281,46 @@ nav a:hover {
 
 
 /* Contact Article */
-.linkedin-button {
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 2rem;
+    gap: 2rem;
+}
+
+.contact-button {
     display: inline-flex;
     align-items: center;
     background-color: white;
     color: black;
     text-decoration: none;
-    padding: 0.5rem 1.25rem;
-    border-radius: 8px;
+    padding: 0.3rem 1.25rem;
+    border-radius: 10px;
     border: 1.5px solid black;
     font-weight: bold;
     font-size: 1rem;
     gap: 0.5rem;
     transition: background-color 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+
 }
 
-.linkedin-button:hover {
-    background-color: #005a836b;
+.contact-button:hover {
+    background-color: #f0f0f0;
     /* Darker on hover */
 }
 
 .linkedin-icon {
-    width: 20px;
+    width: auto;
     height: 20px;
 }
 
-
+.github-icon {
+    width: auto;
+    height: 20px;
+}
 
 
 
@@ -324,4 +341,204 @@ nav a:hover {
 
 .MyButton:hover {
     font-size: 16px;
+}
+
+/* Pokemon API */
+
+.pokemon-container {
+    justify-content: center;
+}
+
+article {
+    position: relative;
+    padding: 2rem;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Ensure space so content doesn’t overlap the bush */
+article:not(.no-bush) {
+    padding-bottom: 6rem;
+    /* Adjust based on bush height */
+}
+
+/* Center and pin the bush-slot to the bottom of each article */
+.bush-slot {
+    position: absolute;
+    bottom: 2rem;
+    left: 10%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10vh 0;
+}
+
+[data-slot="1"] {
+    left: 90%;
+}
+
+[data-slot="2"] {
+    left: 10%;
+}
+
+[data-slot="3"] {
+    left: 50%;
+}
+
+.pokemon-bush {
+    height: 20vh;
+    width: auto;
+    object-fit: cover;
+    object-position: 50%;
+    cursor: pointer;
+    display: block;
+    transition: transform 0.1s;
+    transform-origin: center;
+    will-change: transform;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(1deg);
+    }
+
+    50% {
+        transform: rotate(-1deg);
+    }
+
+    75% {
+        transform: rotate(1deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes rustle {
+    0% {
+        transform: translateX(0);
+    }
+
+    15% {
+        transform: translateX(-2px);
+    }
+
+    30% {
+        transform: translateX(2px);
+    }
+
+    45% {
+        transform: translateX(-1.5px);
+    }
+
+    60% {
+        transform: translateX(1.5px);
+    }
+
+    75% {
+        transform: translateX(-1px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+.pokemon-bush.shake {
+    animation: shake 0.6s ease;
+    animation-fill-mode: both;
+}
+
+.pokemon-bush:hover {
+    animation-name: rustle;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+    animation-fill-mode: none;
+    filter: brightness(1.1);
+    transition: filter 0.2s ease;
+}
+
+
+
+.pokemon-result {
+    display: none;
+    height: 20vh;
+    width: auto;
+    text-align: center;
+}
+
+.pokemon-result img:hover {
+    filter: brightness(1.1);
+    transition: filter 0.2s ease;
+}
+
+@keyframes pop-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.4);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pokemon-image {
+    height: 20vh;
+    width: auto;
+    object-fit: cover;
+    object-position: 50%;
+    cursor: pointer;
+    animation: pop-in 0.5s ease;
+}
+
+@keyframes puff-out {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+        filter: blur(4px);
+    }
+}
+
+.pokemon-image.puff {
+    animation: puff-out 0.4s ease forwards;
+}
+
+@keyframes run-away {
+    0% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+
+    80% {
+        opacity: 0.8;
+        transform: translateX(-50px) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(300px) scale(0.8);
+    }
+}
+
+.pokemon-image.run {
+    animation: run-away 0.6s ease-out forwards;
 }
