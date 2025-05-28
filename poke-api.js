@@ -14,8 +14,12 @@ function getRandomPokemon(slot) {
             const image = data.sprites.other["official-artwork"].front_default;
 
             const resultDiv = document.querySelector(`.pokemon-result[data-slot="${slot}"]`);
-            resultDiv.style.display = "block";
-            resultDiv.innerHTML = `<h3>A wild ${name} appeared!</h3>`;
+            resultDiv.style.display = "flex";
+            resultDiv.innerHTML = ''; // Clear previous content
+
+            const heading = document.createElement("h4");
+            heading.textContent = `A wild ${name} appeared!`;
+            heading.classList.add("delayed-text"); // CSS handles hidden state
 
             const img = document.createElement("img");
             img.src = image;
@@ -25,13 +29,21 @@ function getRandomPokemon(slot) {
             img.style.cursor = "pointer";
 
             img.addEventListener("click", () => resetScene(slot));
-            resultDiv.appendChild(img);
+
+            resultDiv.appendChild(heading); // Insert heading first
+            resultDiv.appendChild(img);     // Then image
+
+            // Show heading after 600ms
+            setTimeout(() => {
+                heading.classList.add("visible");
+            }, 600);
         })
         .catch(error => {
             const resultDiv = document.querySelector(`.pokemon-result[data-slot="${slot}"]`);
             resultDiv.innerHTML = `<p>${error.message}</p>`;
         });
 }
+
 
 function resetScene(slot) {
     const resultDiv = document.querySelector(`.pokemon-result[data-slot="${slot}"]`);
