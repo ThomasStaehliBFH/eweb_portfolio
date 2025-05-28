@@ -8,43 +8,49 @@
        <meta name="keywords" content="portfolio, EWEB, BFH, Business Information Systems, Digital Business & AI">
        <meta http-equiv="X-UA-Compatible" content="IE=edge">
        <link rel="stylesheet" href="styles.css">
-       <!--link rel="icon" href="..."-->
-       <!--link rel="canonical" href="..."-->
-       
-       <!--style></style-->
-       <!--base href="..."-->
     </head>
+
     <body>
-        <header>
+        <header class="site-header">
+          <div class="container nav-container">
+            <a href="#about" class="logo-wrapper" aria-label="Go to Home">
+            <img src="sources/TS_logo.png" alt="Logo of Thomas Stähli" class="logo-image">
+            <h1 class="logo">Thomas Stähli</h1>
+            </a>
             <nav>
-                <ul class="navigation-ul">
-                    <li class="navigation-li"><a href="#about-me-article">Home</a></li>
-                    <li class="navigation-li"><a href="#tech-skills-article">Tech Skills</a></li>
-                    <li class="navigation-li"><a href="#projects-article">Projects</a></li>
-                    <li class="navigation-li"><a href="#api-call-article">API Call</a></li>
-                    <li class="navigation-li"><a href="#contact-article">Contact</a></li>
+                <ul class="nav-list">
+                    <li class="navigation-li"><a href="#about">Home</a></li>
+                    <li class="navigation-li"><a href="#skills">Skills</a></li>
+                    <li class="navigation-li"><a href="#projects">Projects</a></li>
+                    <li class="navigation-li"><a href="#api">API</a></li>
+                    <li class="navigation-li"><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+          </div>
         </header>
+
         <main>
-            <article id="about-me-article">
-                <div class="about-me-container">
-                  <div class="about-me-text">
-                    <h1>Thomas Stähli</h1>
-                    <h2>Bachelor Student in Business Information Systems</h2>
-                    <p>Some random information about me</p>
-                  </div>
-                  <div class="about-me-image">
-                    <img class="profilepicture" src="sources/profilepicture.jpg" alt="profilepicture">
-                  </div>
-                </div>
-              </article>
-            <article id="tech-skills-article">
-                
-                <h2>Tech Skills</h2>
-                <p>Here are some of my tech skills. I am always eager to learn new technologies and improve my skills.</p>
-                <div class="carousel-wrapper" id="carousel-wrapper">
-                    <div class="icon-track" id="icon-track">
+          <section id="about" class="section about-section">
+            <div class="container about-container">
+              <div class="about-text">
+                <h2>Thomas Stähli</h2>
+                <p>
+                  Bachelor Student in Business Information Systems
+                </p>
+                <p>Some random information about me</p>
+              </div>
+              <div class="about-image">
+                <img src="sources/profilepicture.jpg" alt="Portrait of Thomas Stähli" class="profile-image">
+              </div>
+            </div>
+            </section>
+           
+          <section id="skills" class="section tech-skills-section">
+            <div class="container tech-skills-container">
+              <h2>Tech Skills</h2>
+              <p>I enjoy learning and using a wide variety of technologies. Here's a quick overview:</p>
+              <div class="carousel-wrapper" id="carousel-wrapper">
+                <div class="icon-track" id="icon-track">
                         <img src="https://cdn.simpleicons.org/html5" alt="HTML5 Logo" title="HTML5" draggable="false" >
                         <img src="https://cdn.simpleicons.org/css3" alt="CSS3 Logo" title="CSS3" draggable="false" >
                         <img src="https://cdn.simpleicons.org/javascript" alt="JavaScript Logo" title="JavaScript" draggable="false" >
@@ -113,81 +119,93 @@
                         <img src="https://cdn.simpleicons.org/github" alt="Github Logo" title="Github" draggable="false" >
                         <img src="https://cdn.simpleicons.org/gitlab" alt="Gitlab Logo" title="Gitlab" draggable="false" >
                         <img src="https://cdn.simpleicons.org/jupyter" alt="Jupyter Notebook Logo" title="Jupyter Notebook" draggable="false" >
-                      </div>
-                    </div> 
-                <script src="scroll.js"></script>
-                <div class="bush-slot" data-slot="1">
-                  <img src="sources/bushes.avif" class="pokemon-bush" data-slot="1">
-                  <div class="pokemon-result" data-slot="1"></div>
                 </div>
-            </article>
-            <article id="projects-article">
-                <h2>Projects</h2>
-              
-                <div class="project-container">
-                  <div class="project-text">
-                    <h3>WPR2 Figma Prototyp</h3>
-                    <p>This is a Figma Prototyp for a school project. 
-                      It was a group project together with 4 business students. 
-                      The assignment was to develop a business model in the context of a smart city. 
-                      My job was to develop a Figma Prototyp and the technical concept. <br><br> 
-                      The Figma Prototyp is not responsive so you should click on Fullscreen to test it properly</p>
+              </div> 
+            </div>
+            <div class="pokemon-container">
+            <div class="pokemon-wrapper" data-slot="1">
+              <img src="sources/bushes.avif" class="pokemon-bush" data-slot="1">
+              <div class="pokemon-result" data-slot="1">
+              </div>
+            </div>
+            </div>
+          </section>
+          <section id="projects" class="section projects-section">
+            <div class="container projects-container">
+              <h2>Projects</h2>
+              <div class="project-card">
+                <div class="project-text">
+                  <h3>WPR2 Figma Prototype</h3>
+                  <p>
+                    This is a prototype for a Smart City project, created using Figma during a group project at BFH. I was responsible for the technical concept and the prototype design. <br><br>
+                    <strong>Note:</strong> The Figma embed is not fully responsive — open it fullscreen for the best experience.
+                  </p>
+                </div>
+                <div class="project-embed">
+                  <div class="iframe-wrapper">
+                    <iframe 
+                      src="https://embed.figma.com/proto/CNxOfZXvW361WkyAMf3Y6R/Prototyp?page-id=34%3A110&node-id=542-3307&p=f&viewport=216%2C104%2C0.03&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=119%3A1242&embed-host=share"
+                      allowfullscreen
+                      loading="lazy">
+                    </iframe>
                   </div>
-              
-                  <div class="project-iframe">
-                    <div class="iframe" style="position: relative; width: 100%; padding-top: 56.25%;"> 
-                      <iframe 
-                        src="https://embed.figma.com/proto/CNxOfZXvW361WkyAMf3Y6R/Prototyp?page-id=34%3A110&node-id=542-3307&p=f&viewport=216%2C104%2C0.03&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=119%3A1242&embed-host=share"
-                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-                        allowfullscreen>
-                      </iframe>
-                    </div>
-                  </div>
                 </div>
-                
-                <div class="bush-slot" data-slot="2">
-                  <img src="sources/bushes.avif" class="pokemon-bush" data-slot="2">
-                  <div class="pokemon-result" data-slot="2"></div>
-                </div>
-              </article>
-            <article id="api-call-article">
-                 <h2>API Call</h2>
-                 <h3>Random Cat Image</h3>
-                 <div id="cat-img">
-                    <button onclick="getCatImage()">Get a Cat!</button>
-                    <br><br>
-                    <img id="catImage" src="" alt="Cute cat will appear here" width="25%">
-                </div>
-                    <script src="cat-api.js"></script>
-            </article>
-            <article id="contact-article">
-                <h2>Contact</h2>
-                <p>If you want to contact me, you can do so via the following channels:</p>
-                <div class="contact-container">
-                    <a href="https://www.linkedin.com/in/thomas-staehli/" target="_blank" rel="noopener noreferrer" class="contact-button">
-                        <img src="sources\LI-In-Bug.png" alt="LinkedIn Icon" title="LinkedIn" class="linkedin-icon">LinkedIn
-                      </a>
-                     <a href="https://github.com/ThomasStaehliBFH" target="_blank" rel="noopener noreferrer" class="contact-button">
-                      <img src="https://cdn.simpleicons.org/github" alt="GitHub Icon" title="GitHub" class="github-icon">
-                     Github</a>
-                    </div>
-                    
-                <div class="bush-slot" data-slot="3">
+              </div>
+            </div>
+            <div class="pokemon-container">
+            <div class="pokemon-wrapper" data-slot="2">
+              <img src="sources/bushes.avif" class="pokemon-bush" data-slot="2">
+              <div class="pokemon-result" data-slot="2">
+              </div>
+            </div>
+            </div>
+          </section>      
+          <section id="api" class="section api-section">
+            <div class="container api-container">
+              <h2>API Call</h2>
+              <p>Get a Random Cat Image</p>
+              <button id="catButton" class="button">Get a Cat!</button>
+              <div class="cat-image-wrapper">                
+                <img id="catImage" src="" alt="A cute cat will appear here!" class="cat-img" />
+              </div>
+            </div>
+          </section>
+          <section id="contact" class="section contact-section">
+            <div class="container">
+              <h2>Contact</h2>
+              <p>If you want to connect, feel free to reach out on these platforms:</p>
+              <div class="contact-buttons">
+                <a href="https://www.linkedin.com/in/thomas-staehli/" target="_blank" rel="noopener noreferrer" class="button">
+                <img src="sources/InBug-White.png" alt="LinkedIn Icon" class="icon"> LinkedIn
+                </a>
+                <a href="https://github.com/ThomasStaehliBFH" target="_blank" rel="noopener noreferrer" class="button">
+                <img src="sources/GitHub_Invertocat_Light.png" alt="GitHub Icon" class="icon"> GitHub
+                </a>
+              </div>
+            </div>
+            <div class="pokemon-container">
+            <div class="pokemon-wrapper" data-slot="3">
                   <img src="sources/bushes.avif" class="pokemon-bush" data-slot="3">
                   <div class="pokemon-result" data-slot="3"></div>
                 </div>
-           </article>
-            <article id="playground-article">
-                <h2>Playground</h2>
+                </div>
+          </section>              
+          <section id="playground" class="section playground-section">
+            <div class="container">
+              <h2>Playground</h2>
               
-              
-                  
-               </article>
+            </div>                  
+          </section>
         </main>
-        <footer>
+        <footer class="site-footer">
+            <p>&copy; 2023 Thomas Stähli. All rights reserved.</p>
+            <p>Last updated: Mai 2025</p>
+            <p>BFH Business Information Systems - EWEB Module</p>
             
         </footer>
         <script src="scripts.js"></script>
+        <script src="scroll.js"></script>
         <script src="poke-api.js"></script>
+        <script src="cat-api.js"></script>
     </body>
 </html>
