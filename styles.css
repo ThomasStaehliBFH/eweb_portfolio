@@ -83,7 +83,6 @@ p {
     width: 100vw;
     min-height: 100vh;
     /* calc(100vh - var(--header-height)) */
-    border: 1px solid black;
     padding: 20% 10%;
 }
 
@@ -91,6 +90,15 @@ p {
     .section {
         padding: 5% 10%;
     }
+}
+
+.section-divider {
+    width: 90vw;
+    height: 1px;
+    background-color: #ccc;
+    border: none;
+    margin: 0 auto;
+    border-radius: 2rem;
 }
 
 

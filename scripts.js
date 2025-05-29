@@ -9,12 +9,15 @@ function updateHeaderHeight() {
 window.addEventListener("load", updateHeaderHeight);
 window.addEventListener("resize", updateHeaderHeight);
 
+
+/* Header disappears when scrolling */
 let lastScrollY = window.scrollY;
+let scrollUpDistance = 0;
 const header = document.getElementById('site-header');
+const threshold = 50; // Amount user must scroll up to reveal header again
 
 function getHeaderHeight() {
-    const value = getComputedStyle(document.documentElement).getPropertyValue('--header-height');
-    return parseInt(value) || 80; // fallback to 80px if not set
+    return header ? header.offsetHeight : 80;
 }
 
 window.addEventListener('scroll', () => {
@@ -22,18 +25,25 @@ window.addEventListener('scroll', () => {
     const headerHeight = getHeaderHeight();
 
     if (currentScroll < headerHeight) {
-        // Near the top: keep header visible
+        // Near top of page — always show header
         header.style.top = "0";
+        scrollUpDistance = 0;
     } else if (currentScroll > lastScrollY) {
-        // Scrolling down
+        // Scrolling down — hide header
         header.style.top = `-${headerHeight}px`;
+        scrollUpDistance = 0;
     } else {
-        // Scrolling up
-        header.style.top = "0";
+        // Scrolling up — accumulate scroll distance
+        scrollUpDistance += lastScrollY - currentScroll;
+
+        if (scrollUpDistance > threshold) {
+            header.style.top = "0";
+        }
     }
 
     lastScrollY = currentScroll;
 });
+
 
 /* Tech Skills Item Scroll */
 const wrapper = document.getElementById('carousel-wrapper');
