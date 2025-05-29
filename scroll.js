@@ -52,7 +52,7 @@ wrapper.addEventListener('touchend', () => {
 wrapper.addEventListener('touchmove', (e) => {
     if (!isDown) return;
     const x = e.touches[0].pageX - wrapper.offsetLeft;
-    const walk = (x - startX) * 2;
+    const walk = (x - startX) * 1;
     wrapper.scrollLeft = scrollLeft - walk;
 });
 

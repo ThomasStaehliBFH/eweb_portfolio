@@ -11,7 +11,7 @@
     </head>
 
     <body>
-        <header class="site-header">
+        <header id="site-header" class="site-header">
           <div class="container nav-container">
             <a href="#about" class="logo-wrapper" aria-label="Go to Home">
             <img src="sources/TS_logo.png" alt="Logo of Thomas Stähli" class="logo-image">
@@ -19,7 +19,6 @@
             </a>
             <nav>
                 <ul class="nav-list">
-                    <li class="navigation-li"><a href="#about">Home</a></li>
                     <li class="navigation-li"><a href="#skills">Skills</a></li>
                     <li class="navigation-li"><a href="#projects">Projects</a></li>
                     <li class="navigation-li"><a href="#api">API</a></li>
@@ -48,6 +47,7 @@
             <div class="container tech-skills-container">
               <h2>Tech Skills</h2>
               <p>I enjoy learning and using a wide variety of technologies. Here's a quick overview:</p>
+              <div class="spacer1"></div>
               <div class="carousel-wrapper" id="carousel-wrapper">
                 <div class="icon-track" id="icon-track">
                         <img src="https://cdn.simpleicons.org/html5" alt="HTML5 Logo" title="HTML5" draggable="false" >
@@ -120,8 +120,9 @@
                         <img src="https://cdn.simpleicons.org/jupyter" alt="Jupyter Notebook Logo" title="Jupyter Notebook" draggable="false" >
                 </div>
               </div> 
+              <div class="spacer2"></div>
             </div>
-            <div class="pokemon-container">
+            <div class="pokemon-container left">
             <div class="pokemon-wrapper" data-slot="1">
               <img src="sources/bushes.avif" class="pokemon-bush" data-slot="1">
               <div class="pokemon-result" data-slot="1">
@@ -155,12 +156,15 @@
           </section>      
           <section id="api" class="section api-section">
             <div class="container api-container">
+              <div class="cat-api-wrapper">
               <h2>API Call</h2>
               <p>Get a Random Cat Image</p>
               <button id="catButton" class="button">Get a Cat!</button>
+              </div>
               <div class="cat-image-wrapper">                
                 <img id="catImage" src="" alt="A cute cat will appear here!" class="cat-img" />
               </div>
+              
             </div>
           </section>
           <section id="contact" class="section contact-section">
@@ -176,7 +180,7 @@
                 </a>
               </div>
             </div>
-            <div class="pokemon-container">
+            <div class="pokemon-container right">
             <div class="pokemon-wrapper" data-slot="2">
                   <img src="sources/bushes.avif" class="pokemon-bush" data-slot="2">
                   <div class="pokemon-result" data-slot="2"></div>
@@ -187,11 +191,38 @@
             <div class="container">
               <h2>Playground</h2>
               
-            </div>                  
+            </div> 
+            <div class="pokemon-container center">
+            <div class="pokemon-wrapper" data-slot="3">
+              <img src="sources/bushes.avif" class="pokemon-bush" data-slot="3">
+              <div class="pokemon-result" data-slot="3">
+              </div>
+            </div>
+             <div class="pokemon-wrapper" data-slot="4">
+              <img src="sources/bushes.avif" class="pokemon-bush" data-slot="4">
+              <div class="pokemon-result" data-slot="4">
+              </div>
+            </div>
+             <div class="pokemon-wrapper" data-slot="5">
+              <img src="sources/bushes.avif" class="pokemon-bush" data-slot="5">
+              <div class="pokemon-result" data-slot="5">
+              </div>
+            </div>
+             <div class="pokemon-wrapper" data-slot="6">
+              <img src="sources/bushes.avif" class="pokemon-bush" data-slot="6">
+              <div class="pokemon-result" data-slot="6">
+              </div>
+            </div>
+             <div class="pokemon-wrapper" data-slot="7">
+              <img src="sources/bushes.avif" class="pokemon-bush" data-slot="7">
+              <div class="pokemon-result" data-slot="7">
+              </div>
+            </div>
+            </div>                 
           </section>
         </main>
         <footer class="site-footer">
-            <p>&copy; 2023 Thomas Stähli. All rights reserved.</p>
+            <p>&copy; 2025 Thomas Stähli. All rights reserved.</p>
             <p>Last updated: Mai 2025</p>
             <p>BFH Business Information Systems - EWEB Module</p>
             
