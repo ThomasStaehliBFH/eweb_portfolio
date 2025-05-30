@@ -57,7 +57,7 @@ p {
     font-size: clamp(1rem, 1.4vw, 1.2rem);
     font-weight: bold;
     border: none;
-    border-radius: 10px;
+    border-radius: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     box-shadow: var(--box-shadow-default);
@@ -153,18 +153,17 @@ p {
 }
 
 .logo-image {
-    height: 50px;
+    height: 3rem;
     width: auto;
     object-fit: cover;
     aspect-ratio: 1 / 1;
-    border-radius: 4px;
     clip-path: inset(5% 5% 5% 5%);
 }
 
 .nav-list {
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     gap: 0.75rem 1rem;
 }
@@ -205,10 +204,6 @@ p {
 
     .logo {
         font-size: 1.2rem;
-    }
-
-    .logo-image {
-        height: px;
     }
 }
 
@@ -391,7 +386,7 @@ p {
 
 .project-text {
     flex: 1;
-    max-width: 600px;
+    max-width: 800px;
 }
 
 .project-embed {
@@ -539,7 +534,7 @@ p {
 
 
 .icon {
-    height: 20px;
+    height: 1.5rem;
     width: auto;
 }
 
@@ -549,6 +544,11 @@ p {
         flex-direction: row;
         justify-content: center;
     }
+}
+
+/*  Playground Section */
+.playground-section {
+    padding-bottom: 0;
 }
 
 /* Pokemon API */
@@ -690,8 +690,6 @@ p {
     filter: brightness(1.1);
     transition: filter 0.2s ease;
 }
-
-
 
 .pokemon-result img:hover {
     filter: brightness(1.1);

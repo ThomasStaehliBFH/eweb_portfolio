@@ -218,7 +218,22 @@ function resetScene(slot) {
 
         // Wait for animation to complete, then reset
         pokemonImage.addEventListener("animationend", () => {
-            document.querySelector(`.pokemon-bush[data-slot="${slot}"]`).style.display = "block";
+            const bush = document.querySelector(`.pokemon-bush[data-slot="${slot}"]`);
+            bush.style.display = "block";
+
+            // 🔄 Trigger rustle animation manually
+            bush.classList.add("rustle-temp");
+            bush.style.animation = "rustle 0.6s ease";
+
+            // Cleanup after animation
+            bush.addEventListener("animationend", () => {
+                bush.style.animation = ""; // Remove inline animation
+                bush.classList.remove("rustle-temp");
+            }, { once: true });
+
+            // Restart shake loop after rustle
+            startRandomShakeForBush(bush);
+
             resultDiv.style.display = "none";
             resultDiv.innerHTML = "";
         }, { once: true });
